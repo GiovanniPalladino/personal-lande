@@ -1,6 +1,7 @@
 <script>
     import CanvasSquare from "$lib/components/CanvasSquare.svelte";
     import ClicksCounter from "$lib/components/ClicksCounter.svelte"
+    import TodoList from "$lib/components/TodoList.svelte";
     let count = $state(5)
 </script>
 
@@ -18,6 +19,8 @@
 <p>count is not in range </p>
 {/if}
 <CanvasSquare />
+
+<TodoList/>
 
 <style>
     h1 {
