@@ -1,52 +1,49 @@
 <script>
-import { onMount } from "svelte"
-
-    let size = $state(50)
-    let color = $state("#ffe00")
+import { untrack } from "svelte";
+    let size = $state(50);
+    let color = $state("#ff3e00")
 
     let canvas
 
-    onMount(() => {
+    $effect(() => {
+    const context = canvas.getContext("2d");
+    context.clearRect(0, 0, canvas.width, canvas.height);
 
-    const context = canvas.getContext("2d")
-    context.clearRect(0, 0, canvas.width, canvas.height)
-
-    context.fillStyle = color
+    context.fillStyle = untrack(() => color)
     context.fillRect(0, 0, size, size)
-    })
-
+    });
 </script>
 
-<h3>canvas square</h3>
+<h3>Canvas Square</h3>
 
 <article>
-    <canvas width="100" height="100"></canvas>
+    <canvas bind:this={canvas} width="100" height="100"> </canvas>
 
     <nav>
         <label>
-            Size: <input type="range">
+            Size: <input type="range" bind:value={size}>
         </label>
 
-                <label>
-            Color: <input type="color">
+        <label>
+            Color: <input type="color" bind:value={color}>
         </label>
     </nav>
 </article>
 
 <style>
-    article { 
+    article {
         display: flex;
         gap: 1em;
         align-items: end;
-     }
+    }
 
-      canvas { 
+    canvas {
         border: solid 1px black;
-     }
+    }
 
-      article { 
+    nav {
         display: flex;
         gap: 1em;
         flex-direction: column;
-     }
-</style> 
+    }
+</style>
