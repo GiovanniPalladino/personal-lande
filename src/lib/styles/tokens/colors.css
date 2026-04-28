@@ -1,0 +1,66 @@
+:root {
+  --hex-brand-100: #FEEFD1;
+  --hex-brand-200: #FED9A2;
+  --hex-brand-300: #FDBE74;
+  --hex-brand-400: #FCA451;
+  --hex-brand-500: #FB7A18;
+  --hex-brand-600: #D75C11;
+  --hex-brand-700: #B4410C;
+  --hex-brand-800: #912C07;
+  --hex-brand-900: #781C04;
+
+--hex-neutral-50: #F9F9FA;
+  --hex-neutral-100: #EFF1F3;
+  --hex-neutral-200: #D6DAE0;
+  --hex-neutral-300: #B5BEC8;
+  --hex-neutral-400: #9AA6B5;
+  --hex-neutral-500: #7B8A9D;
+  --hex-neutral-600: #556577;
+  --hex-neutral-700: #313A45;
+  --hex-neutral-800: #313A45;
+  --hex-neutral-900: #0C0E11;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-canvas: var(--hex-neutral-50);
+    --color-surface: var(--hex-neutral-100);
+
+    --color-ink: var(--hex-neutral-900);
+    --color-ink-secondary: var(--hex-neutral-500);
+    --color-ink-inverted: var(--hex-neutral-50);
+
+    --color-link: var(--hex-brand-600);
+
+    --color-filter--hover: var(--hex-brand-100);
+    --color-filter--selected: var(--hex-brand-500);
+
+    --color-background-primary: var(--hex-neutral-50);
+    --color-content-primary: var(--hex-neutral-900);
+    --color-content-secondary: var(--hex-neutral-400);
+    --color-filter-background-selected: var(--hex-brand-500);
+    --color-filter-content-selected: var(--hex-neutral-50);
+}
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-canvas: var(--hex-neutral-900);
+    --color-surface: var(--hex-neutral-800);
+
+    --color-ink: var(--hex-neutral-50);
+    --color-ink-secondary: var(--hex-neutral-400);
+    --color-ink-inverted: var(--hex-neutral-900);
+
+    --color-link: var(--hex-brand-500);
+
+    --color-filter--hover: var(--hex-brand-800);
+    --color-filter--selected: var(--hex-brand-600);
+
+    --color-background-primary: var(--hex-neutral-900);
+    --color-content-primary: var(--hex-neutral-50);
+    --color-content-secondary: var(--hex-neutral-400);
+    --color-filter-background-selected: var(--hex-brand-600);
+    --color-filter-content-selected: var(--hex-neutral-50);
+}
+}
